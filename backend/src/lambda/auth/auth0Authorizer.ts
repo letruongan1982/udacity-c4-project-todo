@@ -65,7 +65,7 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Origin': "*",
       'Access-Control-Allow-Credentials': true,
     }
   });
@@ -85,8 +85,8 @@ const getSigningKey = async (keys, kid) => {
   const signingKey = signingKeys.find(key => key.kid === kid);
 
   if(!signingKey){
-    throw new Error('Invalid signing keys')
     logger.error("No signing keys found")
+    throw new Error('Invalid signing keys')
   }
   logger.info("Signing keys created successfully ", signingKey)
   return signingKey
