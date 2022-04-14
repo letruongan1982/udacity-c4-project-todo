@@ -56,7 +56,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         newTodoName: ''
       })
     } catch {
-      alert('Todo creation failed')
+      alert('Todo creation failed, pls check your input data')
     }
   }
 
@@ -85,7 +85,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         })
       })
     } catch {
-      alert('Todo deletion failed')
+      alert('Update Todo done is failed')
     }
   }
 
